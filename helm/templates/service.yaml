@@ -3,15 +3,15 @@ kind: Service
 metadata:
   labels:
     app: techtrends
-    tag: latest
+    tag: {{ .Values.image.tag }}
   name: techtrends
-  namespace: sandbox
+  namespace: {{ .Values.namespace.name }} 
 spec:
   ports:
-    - port: 4111
-      protocol: TCP
-      targetPort: 3111
+  - port: {{ .Values.service.port }}
+    protocol: {{ .Values.service.protocol }}
+    targetPort: {{ .Values.service.targetPort }}
   selector:
     app: techtrends
-    tag: latest
-  type: ClusterIP
+    tag: {{ .Values.image.tag }}
+  type: {{ .Values.service.type }}
