@@ -20,20 +20,22 @@ docker logs container_name
 
 # TODO: paste logs from the Docker container
 
-- Serving Flask app 'app' (lazy loading)
-- Environment: production
-  WARNING: This is a development server. Do not use it in a production deployment.
-  Use a production WSGI server instead.
-- Debug mode: on
-  2023-07-03 14:31:09,414 - werkzeug - WARNING - _ Running on all addresses.
-  WARNING: This is a development server. Do not use it in a production deployment.
-  WARNING:werkzeug: _ Running on all addresses.
-  WARNING: This is a development server. Do not use it in a production deployment.
-  2023-07-03 14:31:09,417 - werkzeug - INFO - _ Running on http://172.17.0.3:3111/ (Press CTRL+C to quit)
-  INFO:werkzeug: _ Running on http://172.17.0.3:3111/ (Press CTRL+C to quit)
-  2023-07-03 14:31:09,420 - werkzeug - INFO - _ Restarting with stat
-  INFO:werkzeug: _ Restarting with stat
-  WARNING:werkzeug: _ Debugger is active!
-  2023-07-03 14:31:09,951 - werkzeug - WARNING - _ Debugger is active!
-  INFO:werkzeug: _ Debugger PIN: 825-943-248
-  2023-07-03 14:31:09,962 - werkzeug - INFO - _ Debugger PIN: 825-943-248
+INFO:werkzeug: _ Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+2023-07-05 11:36:29,481 - werkzeug -
+INFO - _ Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug: _ Restarting with stat
+2023-07-05 11:36:29,483 - werkzeug -
+INFO - _ Restarting with stat
+2023-07-05 11:36:29,849 - werkzeug - WARNING - _ Debugger is active!
+WARNING:werkzeug: _ Debugger is active!
+INFO:werkzeug: _ Debugger PIN: 274-673-842
+2023-07-05 11:36:29,866 - werkzeug -
+INFO - _ Debugger PIN: 274-673-842
+INFO:werkzeug:172.17.0.1 - - [05/Jul/2023 11:37:53] "GET / HTTP/1.1" 200 -  
+2023-07-05 11:37:53,294 - werkzeug -
+INFO - 172.17.0.1 - - [05/Jul/2023 11:37:53] "GET / HTTP/1.1" 200 -2023-07-05 11:37:53,344 - werkzeug -
+INFO - 172.17.0.1 - - [05/Jul/2023 11:37:53] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [05/Jul/2023 11:37:53] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-07-05 11:37:53,666 - werkzeug -
+INFO - 172.17.0.1 - - [05/Jul/2023 11:37:53] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [05/Jul/2023 11:37:53] "GET /favicon.ico HTTP/1.1" 404 -
