@@ -4,9 +4,9 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: sandbox
+  namespace: {{ .Values.namespace.name }} 
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
       app: techtrends
@@ -21,24 +21,24 @@ spec:
         app: techtrends
     spec:
       containers:
-        - image: wini123456/techtrends:latest
-          imagePullPolicy: IfNotPresent
-          name: techtrends
-          ports:
-            - containerPort: 3111
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 3111
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 3111
-          resources:
-            requests:
-              cpu: 250m
-              memory: 64Mi
-            limits:
-              cpu: 500m
-              memory: 128Mi
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: techtrends
+        ports:
+            - containerPort: {{ .Values.containerPort }}
+              protocol: {{ .Values.service.protocol }}
+        livenessProbe:
+           httpGet:
+             path: {{ .Values.livenessProbePath }}
+             port: {{ .Values.containerPort }}
+        readinessProbe:
+           httpGet:
+             path: {{ .Values.readinessProbePath }}
+             port: {{ .Values.containerPort }}
+        resources:
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
+          limits:
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
